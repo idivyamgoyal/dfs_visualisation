@@ -46,14 +46,20 @@ export default class MainPage extends React.Component {
         this.displayTree(this.root);
     }
 
+    callCanvas = () => {
+        const canvas = document.getElementById('dfsCanvas');
+        var ctx = canvas.getContext('2D');
+        
+    }
+
     componentDidMount() {
         this.tree();
     }
 
     render() {
         return(
-            <div>
-                hi
+            <div className="fluid-container mainContainer">
+                <canvas id="dfsCanvas"></canvas>
             </div>
         )
     }
