@@ -7,4 +7,4 @@
 #### Value is searched using the DFS Technique.
 #### In the back side, for tree visualisation, BFS Technique is implemented.
 
-### Check out the Live version [here](https://divyamgoyal.com).
+### Check out the Live version [here](https://dfsvisualiser.netlify.app/).

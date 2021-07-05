@@ -7,7 +7,7 @@ export const Footer = () => {
                     Developed by <a href="https://divyamgoyal.com">Divyam Goyal</a>.
                 </div>
                 <div>
-                    <a href="https://github.com/idivyamgoyal">Github</a> | <a href="https://linkedin.com/in/idivyamgoyal">LinkedIn</a> | <a href="mailto:divyamgoyal9930@gmail.com">Mail</a>
+                    <a href="https://github.com/idivyamgoyal">Github</a> &bull; <a href="https://linkedin.com/in/idivyamgoyal">LinkedIn</a> &bull; <a href="mailto:divyamgoyal9930@gmail.com">Mail</a>
                 </div>
             </div>
         </div>

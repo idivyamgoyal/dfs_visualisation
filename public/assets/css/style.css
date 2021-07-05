@@ -1,17 +1,19 @@
 .mainBody {
-    position: relative;
     height: 100vh;
     width: 100vw;
 }
 .mainContainer {
     position: relative;
-    height: 75vh;
+    display: block;
+    height: 80vh;
+    min-width: 100vw;
     padding: 25px;
+    overflow: hidden;
 }
 #dfsCanvas {
     position: absolute;
     width: 74%;
-    height: 98%;
+    height: 70vh;
     left: 23%;
     right: 10%;
     top: 5%;
@@ -22,7 +24,7 @@
     position: relative;
     width: 20%;
 }
-.form-btn {
+.formBtn {
     width: 100%;
 }
 .header {
@@ -31,21 +33,26 @@
     padding: 10px 50px 10px 50px;
     font-size: xx-large;
     color: red;
+    height: 8vh;
     box-shadow: 0px 0px 8px 2px gray;
   }
 .headerText-left, .headerText-right {
     width: 100%;
 }
 .myFooter {
-    position: absolute;
+    position: relative;
+    height: 12vh;
     width: 100%;
     bottom: 0;
-    padding: 10px;
+    padding: 12px 10px;
     background-color: black;
-    height: 11vh;
-    display: flex;
     text-align: center;
 }
 .myFooter > div, .myFooter > div a {
     color: white;
+}
+.pathValue {
+    position: relative;
+    display: inline-block;
+    width: max-content;
 }
