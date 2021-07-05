@@ -56,6 +56,7 @@ export default class BinaryTree {
         // stroking line from parent's circle-bottom to child's circle-top
         this.context.moveTo(x, y + this.radius);
         this.context.lineTo(x1, y1 - this.radius);
+        this.context.strokeStyle = "black";
         this.context.stroke();
     }
     // displaying tree using bfs logic
@@ -66,6 +67,7 @@ export default class BinaryTree {
             const node = queue.shift();
             const {x, y} = node.position;
             this.context.beginPath();
+            this.context.strokeStyle = "black";
             this.context.arc(x, y, this.radius, 0, 2 * Math.PI);
             this.context.stroke();
             this.context.strokeText(node.data, x - 5, y + 5);
@@ -78,5 +80,43 @@ export default class BinaryTree {
                 this.connectNode(x, y, node.rightChild);
             }        
         }
+    }
+    // coloring node while traversing
+    colorNode = (node, isFound = false, reset = false) => {
+        this.context.beginPath();
+        const {x, y} = node.position;
+        this.context.strokeStyle = isFound ? "red" : "blue";
+        this.context.arc(x, y, this.radius, 0, 2 * Math.PI);
+        this.context.stroke();
+    }
+    // de-colouring node to original color while making node-unvisited
+    resetColorNode = (node) => {
+        this.context.beginPath();
+        const {x, y} = node.position;
+        this.context.strokeStyle = "black";
+        this.context.arc(x, y, this.radius, 0, 2 * Math.PI);
+        this.context.stroke();
+    }
+    // searching for node - appying dfs - not using bst logic
+    searchForNode = (nodeData, path, node = this.root) => {
+        if(node.data === nodeData) {
+            path.unshift(node.data);
+            this.colorNode(node, true);
+            return true;
+        }
+        this.colorNode(node);
+        let result;
+        if(node.leftChild) {
+            result = this.searchForNode(nodeData, path, node.leftChild);
+        }
+        if(!result && node.rightChild) {
+            result = this.searchForNode(nodeData, path, node.rightChild);
+        }
+        if(!result) {
+            this.resetColorNode(node);
+            return result;
+        }
+        path.unshift(node.data);
+        return result;
     }
 };
